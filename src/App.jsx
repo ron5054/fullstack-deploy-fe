@@ -4,8 +4,8 @@ import './App.css'
 function App() {
   const [message, setMessage] = useState('')
   console.log(process.env.NODE_ENV)
-  const BASE_URL =
-    process.env.NODE_ENV === 'production' ? '/' : '//localhost:3030/'
+
+  const BASE_URL = '//localhost:3030/'
 
   const getMessage = async () => {
     try {
