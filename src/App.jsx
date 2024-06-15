@@ -4,12 +4,12 @@ import './App.css'
 function App() {
   const [message, setMessage] = useState('')
   console.log(process.env.NODE_ENV)
-
-  const BASE_URL = 'http://localhost:3030/'
+  const BASE_URL =
+    process.env.NODE_ENV === 'production' ? '/' : '//localhost:3030/'
 
   const getMessage = async () => {
     try {
-      const response = await fetch(BASE_URL)
+      const response = await fetch(BASE_URL + 'message')
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`)
